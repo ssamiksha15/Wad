@@ -1,0 +1,51 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    <div data-role="page" id="page1">
+        <div data-role="header">
+            <h1>First Page</h1>
+        </div>
+
+        <div data-role="content">
+            <form id="myForm">
+                <div data-role="fieldcontain">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+
+                <div data-role="fieldcontain">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+
+                <div data-role="fieldcontain">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+
+                <input type="submit" value="Submit" data-role="button" id="submitBtn">
+            </form>
+        </div>
+
+        <div data-role="footer">
+            <h4>Footer content</h4>
+        </div>
+    </div>
+
+    <script>
+        $(document).on("pagecreate", "#page1", function () {
+            $("#myForm").submit(function (e) {
+                e.preventDefault(); // Prevent the form from submitting
+                $.mobile.changePage("second.html"); // Navigate to the second page
+            });
+        });
+    </script>
+</body>
+</html>
